@@ -1,28 +1,28 @@
-import { getPlayersFromDb } from "./idea.db.js"
+import { getPlayersFromDb, fetchPlayersFromDb } from "./idea.db.js"
 
-// export const getPlayersFromService = (teamId) => {
-//     // call db layer
-//     const allPlayers = getPlayersFromDb();
-//     const filteredPlayers = allPlayers.filter(
-
-//         (p) => {
-//             return p.teamId === teamId;
-//         }
-//     )
-
-//     return filteredPlayers
-
-// }
-export const getPlayersFromService = (city) => {
+export const getPlayersFromService = (teamId) => {
     // call db layer
     const allPlayers = getPlayersFromDb();
     const filteredPlayers = allPlayers.filter(
+
+        (p) => {
+            return p.teamId === teamId;
+        }
+    )
+
+    return filteredPlayers
+
+}
+export const fetchPlayersFromService = (city) => {
+    // call db layer
+    const allPlayers = fetchPlayersFromDb();
+    const requiredPlayers = allPlayers.filter(
 
         (p) => {
             return p.city === "Mianwali";
         }
     )
 
-    return filteredPlayers
+    return requiredPlayers
 
 }
